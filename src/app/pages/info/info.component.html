@@ -7,6 +7,32 @@
 
     @if(country) {
     <h1 class="text-center font-thin text-4xl md:text-6xl">{{country[0].name.common}}</h1>
+    <div class="flex flex-wrap justify-center items-start gap-5 mt-10">
+        <div class=" flex flex-1 shadow rounded-sm p-3 items-center justify-center h-60">
+            <img src="{{country[0].flags.png}}" alt="flag"/>
+        </div>
+        <div class="flex flex-col flex-1 h-60 shadow rounded-sm p-3 min-w-1/2 min-h-min">
+            <h3 class=" font-bold text-2xl animate-ping-1s flex-shrink-1"> Everything you need to know about {{country[0].name.common}}</h3>
+            <h4 class="font-thin text-xl mt-2 flex-shrink-1"><em class="font-normal text-s">Continent</em>: {{country[0].region}}</h4>
+            <h4 class="font-thin text-xl mt-2 flex-shrink-1"><em class="font-normal text-s">Sub-region</em>: {{country[0].subregion}}</h4>
+            <h4 class="font-thin text-xl mt-2 flex-shrink-1"><em class="font-normal text-s">Capital City</em>: {{country[0].capital}}</h4>
+            <h4 class="font-thin text-xl mt-2 flex-shrink-1"><em class="font-normal text-s">Currency</em>: {{currencies[0][1].name}} ({{currencies[0][1].symbol}})</h4>
+        </div>
+
+    </div>
+
+    <div class="flex flex-col flex-1 mt-10 rounded-sm p-3">
+        <h3 class="text-center font-thin text-4xl md:text-4xl"> Here are some interesting facts about {{country[0].name.common}}</h3><hr class="shadow"/>
+        <div class="flex flexrow justify-center items-start gap-5 mt-5">
+            <div class="flex flex-col rounded-sm p-3 w-1/2">
+                <h3 class="text-center">The coat of arms of {{country[0].name.common}} </h3>
+                <img src="{{country[0].coatOfArms.svg}}" alt="coat of arms" class="w-1/4 mx-auto mt-5 h-full"/>
+            </div>
+            <div class="flex flex-col rounded-sm p-3 w-1/2">
+
+            </div>
+        </div>
+    </div>
 
     }
 

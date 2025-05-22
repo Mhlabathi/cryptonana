@@ -15,10 +15,12 @@ export class InfoComponent implements OnInit {
   loaderService = inject(LoaderService);
 
   country: any | null = null;
+  currencies: any | null = null;
 
   async ngOnInit() {
     this.loaderService.show();
     const countryName = this.activatedRoute.snapshot.params['countryName'];
+    // console.log(currencies);
 
     this.countryService.searchByCountryName(countryName).subscribe(
       (data) => {
@@ -27,6 +29,9 @@ export class InfoComponent implements OnInit {
 
         console.log(this.country);
         console.log(this.country[0].altSpellings[1]);
+        let curency = this.country[0].currencies;
+        this.currencies = Object.entries(curency);
+        console.log(this.currencies);
       },
       (error) => {
         this.loaderService.hide();

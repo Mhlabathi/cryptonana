@@ -9,6 +9,7 @@ export class CountryService {
   API: string = environment.api;
 
   countries = signal<any[]>([]);
+  currencies = signal<any[]>([]);
 
   constructor(private http: HttpClient) {}
 
@@ -22,6 +23,10 @@ export class CountryService {
 
   searchByCountryName(name: string) {
     return this.http.get(`${this.API}/name/${name}`);
+  }
+
+  getCountryCurrency(currencies: any[]) {
+    return this.http.get(`${this.API}/name/currency/${currencies}`);
   }
 
 }
